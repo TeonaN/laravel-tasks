@@ -1,4 +1,4 @@
-@extends("layouts.main")
+@extends("layouts.single")
 @section('content')
 <div id="main-wrapper">
 <!-- Page Preloader -->
