@@ -13,10 +13,17 @@
 
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('info.index');
-});
 
+// Route::get('/', function () {
+//     // return view('info.index');
+//     return App\Posts::get();
+// });
+
+Route::get("/","PostsController@FunctionName");
+
+Route::get("/create/posts","PostsController@create");
+
+Route::post("/create/store","PostsController@store")->name("store");
 
 Route::get("/getinfo", function() {
 	return view("info.form");
