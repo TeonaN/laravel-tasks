@@ -16,14 +16,14 @@ use Illuminate\Http\Request;
 
 // Route::get('/', function () {
 //     // return view('info.index');
-//     return App\Posts::get();
+//     return App\Products::get();
 // });
 
-Route::get("/","PostsController@FunctionName");
+Route::get("/","ProductsController@Function1")->name("toredirect");
 
-Route::get("/create/posts","PostsController@create");
+Route::get("/create/products","ProductsController@create");
 
-Route::post("/create/store","PostsController@store")->name("store");
+Route::post("/product/store","ProductsController@store")->name("store");
 
 Route::get("/getinfo", function() {
 	return view("info.form");
