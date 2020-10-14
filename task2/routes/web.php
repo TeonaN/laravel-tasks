@@ -27,7 +27,8 @@ Route::post("/product/store","ProductsController@store")->name("store");
 
 Route::get("/getinfo", function() {
 	return view("info.form");
-});
+})->name("toredirect");
+
 Route::post("/info",function(Request $req){
 	$data=[
 		[
