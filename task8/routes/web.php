@@ -26,7 +26,13 @@ Route::post("/home/store", "HomeController@store")->name("store");
 
 Route::get("/home/edit/{id}","HomeController@edit")->name("edit");
 
-Route::post("/admin/update","HomeController@update")->name("update");
+Route::post("/admin/show/update","HomeController@update")->name("update");
+
+Route::post("/home/delete", "HomeController@destroy")->name("delete");
+
+Route::get("/home/show/{id}","HomeController@show")->name("show");
+
+
 
 Route::get('/fail', function () {
     return "You can't edit posts";

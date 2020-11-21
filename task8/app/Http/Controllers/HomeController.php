@@ -56,6 +56,13 @@ class HomeController extends Controller
         return redirect()->route("home");
     }
 
+        public function show($id)
+    {
+        $new=News::where("id",$id)->firstOrFail();
+        return view("show",["news"=>$new]);
+
+    }
+
      public function edit($id)
     {
         $news = News::find($id)->firstOrFail();
@@ -79,5 +86,11 @@ class HomeController extends Controller
         ]);
 
             return redirect()->route("home");
+    }
+
+    public function destroy(Request $request)
+    {
+        News::where("id",$request->input("id"))->delete();
+        return redirect()->back();
     }
 }
