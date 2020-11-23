@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\News;
 
+use Illuminate\Support\Facades\Input;
+
+
 
 class HomeController extends Controller
 {
@@ -48,10 +51,19 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-                News::create([
+        if (Input::file("image")){
+            $dest=public_path("images");
+            $filename=uniqid().".jpg";
+            $img=input::file("image")->move($dest,$filename);
+        }
+            News::create([
             "title"=>$request->input("title"),
             "description"=>$request->input("description"),
-            "short_description"=>$request->input("short_description")
+            "short_description"=>$request->input("short_description"),
+            "category_id"=>$request->input("category_id"),
+            "creation_date"=>$request->input("creation_date"),
+            "image"=>$filename
+
         ]);
         return redirect()->route("home");
     }

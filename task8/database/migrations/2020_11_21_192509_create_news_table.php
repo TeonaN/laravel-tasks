@@ -19,7 +19,9 @@ class CreateNewsTable extends Migration
             $table->text('description');
             $table->text('short_description');
             $table->integer('user_id')->default(1);;
-            $table->integer('category_id')->default(1);;
+            $table->integer('category_id');
+            $table->string('image');
+            $table->DATE('creation_date');
             $table->timestamps();
         });
     }

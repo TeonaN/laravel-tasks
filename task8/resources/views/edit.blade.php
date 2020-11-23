@@ -12,7 +12,7 @@
 		<input type="text" name="title" placeholder="title" value="{{ $news->title }}"><br>
 		<label>Description</label><br>
 		<textarea type="text" name="description">{{ $news->description }}</textarea><br>
-		<label>Description</label><br>
+		<label>Short Description</label><br>
 		<textarea type="text" name="short_description">{{ $news->short_description }}</textarea><br>
 		<button>save</button>
 	</form>
