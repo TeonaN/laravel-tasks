@@ -51,6 +51,12 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            "image"=>"required",
+            "title"=>"required",
+            "creation_date"=>"required"
+        ]);
+
         if (Input::file("image")){
             $dest=public_path("images");
             $filename=uniqid().".jpg";
