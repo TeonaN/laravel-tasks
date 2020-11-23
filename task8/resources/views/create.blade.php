@@ -23,6 +23,13 @@
 		<input type="file" name="image">
 		<input type="hidden" name="category_id" value="1">
 		<input type="date" id="creation_date" name="creation_date">
+		<br>
+
+		<input type="text" name="tags[]">
+		<input type="text" name="tags[]">
+		<input type="text" name="tags[]">
+		<input type="text" name="tags[]">
+
 		<button>save</button>
 	</form>
 

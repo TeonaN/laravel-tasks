@@ -17,6 +17,7 @@
                     <p>{{ $news->short_description }}</p>
                     <img src="{{asset('images')."/".$news->image}}"style="width:500px;height:250px;"><br>
 
+
                     <a href="{{ route('edit',["id"=>$news->id ]) }}">
                             Edit</a>
 

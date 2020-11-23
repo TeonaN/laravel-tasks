@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\News;
+use App\Tags;
+
 
 use Illuminate\Support\Facades\Input;
 
@@ -39,7 +41,17 @@ class HomeController extends Controller
 
     public function create()
     {
+
         return view("create");
+        $tag_id= Tags::create([
+            "news_id"=>1,
+            "text"=>2
+
+        ])["id"];
+        foreach ($request->input("tags") as $tags) {
+            echo $tags." ".$tag_id."<br>";
+            # code...
+        }
 
     }
 
